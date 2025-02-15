@@ -6,8 +6,10 @@ import toml
 
 if "RUN_DIR" in os.environ.keys():
     home = os.environ['RUN_DIR']
+    gradle_dir = os.environ['HOME']
 else:
     home = os.path.expanduser('~') + "/IdeaProjects/versions-parent"
+    gradle_dir = os.path.expanduser('~')
 
 @dataclasses.dataclass(init=True)
 class Library:
@@ -119,7 +121,7 @@ def build_kotlin_fn():
     with open(f"{home}/hayden-bom-plugin/build_hayden_bom/BomTemplate.txt", 'r') as b:
         print("Opened Bom template.")
         lines = b.readlines()
-        loaded = toml.load(f"{home}/.gradle/libs.versions.toml")
+        loaded = toml.load(f"{gradle_dir}/.gradle/libs.versions.toml")
         with open(f"{home}/hayden-bom-plugin/src/main/kotlin/com/hayden/haydenbomplugin/BomPlugin.kt", 'w') as out:
             for l in lines:
                 version_catalog = VersionCatalog(loaded)

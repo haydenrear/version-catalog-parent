@@ -6,7 +6,6 @@ plugins {
 group = "com.hayden"
 version = "0.0.3"
 
-
 repositories {
     mavenLocal()
 }
