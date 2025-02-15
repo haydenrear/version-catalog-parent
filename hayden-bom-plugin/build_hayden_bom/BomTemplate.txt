@@ -1,0 +1,32 @@
+package com.hayden.haydenbomplugin
+
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.api.plugins.ExtensionAware
+
+open class Libraries {
+    {libraryAccessors}
+}
+
+open class Plugins {
+    {pluginAccessors}
+}
+
+open class Bundles {
+    {bundleAccessors}
+}
+
+open class BuildSrcVersionCatalogCollector(val project: Project) {
+
+    val libs = Libraries()
+    val plugins = Plugins()
+    val bundles = Bundles()
+
+}
+
+// TODO: hayden bom generator - generate this plugin with accessors.
+class BomPlugin: Plugin<Project> {
+    override fun apply(target: Project) {
+        val extension = target.extensions.create("buildSrcLibs", BuildSrcVersionCatalogCollector::class.java)
+    }
+}
