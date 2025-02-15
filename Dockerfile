@@ -26,7 +26,7 @@ RUN chmod +x ./phx/bin/activate
 #RUN source ./phx/bin/activate
 
 COPY . ./
-
+ENV GRADLE_USER_HOME=/home/ubuntu/.gradle
 # Set JAVA_HOME environment variable
 ENV RUN_DIR=/home/ubuntu/versions-parent
 ENV JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-arm64
