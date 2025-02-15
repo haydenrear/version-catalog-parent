@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "$HOME"
 ./gradlew version_catalog:generateCatalogAsToml
 cp version_catalog/build/version-catalog/libs.versions.toml "$HOME"/.gradle
 cd hayden-bom || exit

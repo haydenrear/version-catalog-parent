@@ -1,6 +1,7 @@
 # Use the official Ubuntu base image
 FROM ubuntu:latest
 
+ENV HOME=/home/ubuntu
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
