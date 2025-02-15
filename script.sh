@@ -17,4 +17,4 @@ cd ../..
 ./gradlew hayden-bom-plugin:publishToMavenLocal
 
 ls /root || true
-ls /root/.m2/com/hayden || true
+ls /root/.m2/repository/com/hayden || true
