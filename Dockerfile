@@ -32,4 +32,5 @@ ENV RUN_DIR=/home/ubuntu/versions-parent
 ENV JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-arm64
 ENV PATH="$JAVA_HOME/bin:$PATH"
 RUN chmod 777 script.sh
+RUN apt-get install -y vim
 ENTRYPOINT ["./script.sh"]
