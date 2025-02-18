@@ -118,6 +118,7 @@ def load_version_catalog() -> VersionCatalog:
     pass
 
 def build_kotlin_fn():
+    print("Building version catalog for strongly typed versioning in buildSrc.")
     with open(f"{home}/hayden-bom-plugin/build_hayden_bom/BomTemplate.txt", 'r') as b:
         print("Opened Bom template.")
         lines = b.readlines()
