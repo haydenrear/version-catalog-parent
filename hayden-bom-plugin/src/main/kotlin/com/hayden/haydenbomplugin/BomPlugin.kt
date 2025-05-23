@@ -75,22 +75,40 @@ open class Libraries {
         val opentelemtrySpringBootStarter = "io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.8.0"
         
 
-        val springBoot = "org.springframework.boot:spring-boot-gradle-plugin:3.3.3"
+        val springAiBom = "org.springframework.ai:spring-ai-bom:1.0.0"
         
 
-        val springBootDependenciesBom = "org.springframework.boot:spring-boot-dependencies:3.3.3"
+        val springAiChat = "org.springframework.ai:spring-ai-client-chat:1.0.0"
         
 
-        val springCloudBom = "org.springframework.cloud:spring-cloud-dependencies:2023.0.3"
+        val springAiClient = "org.springframework.ai:spring-ai-starter-mcp-client:1.0.0"
         
 
-        val springDependencyManagement = "io.spring.gradle:dependency-management-plugin:1.1.6"
+        val springAiServer = "org.springframework.ai:spring-ai-starter-mcp-server:1.0.0"
+        
+
+        val springAiVectorStore = "org.springframework.ai:spring-ai-starter-vector-store-pgvector:1.0.0"
+        
+
+        val springAiVectorStoreAdvisor = "org.springframework.ai:spring-ai-advisors-vector-store:1.0.0"
+        
+
+        val springBoot = "org.springframework.boot:spring-boot-gradle-plugin:3.4.5"
+        
+
+        val springBootDependenciesBom = "org.springframework.boot:spring-boot-dependencies:3.4.5"
+        
+
+        val springCloudBom = "org.springframework.cloud:spring-cloud-dependencies:2024.0.1"
+        
+
+        val springDependencyManagement = "io.spring.gradle:dependency-management-plugin:1.1.7"
         
 
         val springIntegrationBom = "org.springframework.integration:spring-integration-bom:6.2.1"
         
 
-        val springShellBom = "org.springframework.shell:spring-shell-dependencies:3.3.3"
+        val springShellBom = "org.springframework.shell:spring-shell-dependencies:3.4.0"
         }
 
 open class Plugins {
@@ -157,19 +175,21 @@ val droolsBundle = DroolsBundle()
         
 
         open class ExternalbomsBundle {
-                val springCloudBom = "org.springframework.cloud:spring-cloud-dependencies:2023.0.3"
+                val springCloudBom = "org.springframework.cloud:spring-cloud-dependencies:2024.0.1"
             
-                val springBootDependenciesBom = "org.springframework.boot:spring-boot-dependencies:3.3.3"
+                val springBootDependenciesBom = "org.springframework.boot:spring-boot-dependencies:3.4.5"
             
                 val springIntegrationBom = "org.springframework.integration:spring-integration-bom:6.2.1"
             
                 val openTelemetryBom = "io.opentelemetry:opentelemetry-bom:1.42.1"
             
-                val springShellBom = "org.springframework.shell:spring-shell-dependencies:3.3.3"
+                val springShellBom = "org.springframework.shell:spring-shell-dependencies:3.4.0"
+            
+                val springAiBom = "org.springframework.ai:spring-ai-bom:1.0.0"
             
         open fun inBundle(): List<String> {
             return mutableListOf(
-        springCloudBom, springBootDependenciesBom, springIntegrationBom, openTelemetryBom, springShellBom)}}
+        springCloudBom, springBootDependenciesBom, springIntegrationBom, openTelemetryBom, springShellBom, springAiBom)}}
 val externalBomsBundle = ExternalbomsBundle()
 
         
@@ -191,6 +211,40 @@ val externalBomsBundle = ExternalbomsBundle()
             return mutableListOf(
         opentelemtrySemConv, opentelemtryLogback, opentelemtryInstrumentationApi, opentelemtrySpringBootStarter, opentelemtryAnnotations, opentelemtryJdbc)}}
 val opentelemetryBundle = OpentelemetryBundle()
+
+        
+
+        open class SpringaiBundle {
+                val springAiVectorStoreAdvisor = "org.springframework.ai:spring-ai-advisors-vector-store:1.0.0"
+            
+                val springAiVectorStore = "org.springframework.ai:spring-ai-starter-vector-store-pgvector:1.0.0"
+            
+                val springAiChat = "org.springframework.ai:spring-ai-client-chat:1.0.0"
+            
+        open fun inBundle(): List<String> {
+            return mutableListOf(
+        springAiVectorStoreAdvisor, springAiVectorStore, springAiChat)}}
+val springAiBundle = SpringaiBundle()
+
+        
+
+        open class SpringaiclientBundle {
+                val springAiClient = "org.springframework.ai:spring-ai-starter-mcp-client:1.0.0"
+            
+        open fun inBundle(): List<String> {
+            return mutableListOf(
+        springAiClient)}}
+val springAiClientBundle = SpringaiclientBundle()
+
+        
+
+        open class SpringaiserverBundle {
+                val springAiServer = "org.springframework.ai:spring-ai-starter-mcp-server:1.0.0"
+            
+        open fun inBundle(): List<String> {
+            return mutableListOf(
+        springAiServer)}}
+val springAiServerBundle = SpringaiserverBundle()
 
         }
 

@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.hayden"
-version = "0.0.3"
+version = "0.0.4"
 
 dependencies{
     implementation("com.squareup:javapoet:1.10.0")
