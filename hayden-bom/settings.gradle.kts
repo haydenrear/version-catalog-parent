@@ -6,7 +6,7 @@ dependencyResolutionManagement {
             mavenLocal()
         }
         create("vC") {
-            from("com.hayden:version_catalog:0.0.3")
+            from("com.hayden:version_catalog:0.0.4")
         }
     }
     repositories {
