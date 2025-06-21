@@ -1,0 +1,13 @@
+[project]
+name = "build-hayden-bom"
+version = "0.0.1"
+description = "uv for building BOM"
+
+dependencies=[
+    "toml==0.10.2"
+]
+
+requires-python = ">=3.11"
+
+[project.scripts]
+build-hayden-bom = "build"

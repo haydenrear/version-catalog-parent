@@ -48,7 +48,7 @@ open class Libraries {
         val droolsMvel = "org.drools:drools-mvel:8.44.0.Final"
         
 
-        val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23"
+        val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0"
         
 
         val netflixDgsLib = "com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:6.4.0-SNAPSHOT"

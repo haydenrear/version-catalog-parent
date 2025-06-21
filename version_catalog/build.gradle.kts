@@ -34,7 +34,7 @@ catalog {
         bundle("springAiClient", mutableListOf("springAiClient"))
 
         library("springDependencyManagement", "io.spring.gradle:dependency-management-plugin:1.1.7")
-        library("kotlinGradle", "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23")
+        library("kotlinGradle", "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
 
         library("aspectJWeaver", "org.aspectj:aspectjweaver:1.9.7")
 
