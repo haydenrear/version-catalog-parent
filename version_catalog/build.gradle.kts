@@ -16,6 +16,7 @@ project.ext["springIntegrationVersion"] = "6.2.1"
 project.ext["springAiVersion"] = "1.0.0"
 project.ext["openTelemetryVersion"] = "1.42.1"
 project.ext["springShellVersion"] = "3.4.0"
+project.ext["springModulithVersion"] = "1.4.3"
 
 catalog {
     versionCatalog {
@@ -82,12 +83,13 @@ catalog {
         library("springAiBom", "org.springframework.ai:spring-ai-bom:${property("springAiVersion")}")
         library("openTelemetryBom", "io.opentelemetry:opentelemetry-bom:${property("openTelemetryVersion")}")
         library("springShellBom", "org.springframework.shell:spring-shell-dependencies:${property("springShellVersion")}")
+        library("springModulithBom", "org.springframework.modulith:spring-modulith-bom:${property("springModulithVersion")}")
 
 
         bundle("externalBoms", mutableListOf(
             "springCloudBom", "springBootDependenciesBom",
             "springIntegrationBom", "openTelemetryBom",
-            "springShellBom", "springAiBom"
+            "springShellBom", "springAiBom", "springModulithBom"
         ))
 
     }

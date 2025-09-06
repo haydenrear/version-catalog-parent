@@ -108,6 +108,9 @@ open class Libraries {
         val springIntegrationBom = "org.springframework.integration:spring-integration-bom:6.2.1"
         
 
+        val springModulithBom = "org.springframework.modulith:spring-modulith-bom:1.4.3"
+        
+
         val springShellBom = "org.springframework.shell:spring-shell-dependencies:3.4.0"
         }
 
@@ -187,9 +190,11 @@ val droolsBundle = DroolsBundle()
             
                 val springAiBom = "org.springframework.ai:spring-ai-bom:1.0.0"
             
+                val springModulithBom = "org.springframework.modulith:spring-modulith-bom:1.4.3"
+            
         open fun inBundle(): List<String> {
             return mutableListOf(
-        springCloudBom, springBootDependenciesBom, springIntegrationBom, openTelemetryBom, springShellBom, springAiBom)}}
+        springCloudBom, springBootDependenciesBom, springIntegrationBom, openTelemetryBom, springShellBom, springAiBom, springModulithBom)}}
 val externalBomsBundle = ExternalbomsBundle()
 
         
