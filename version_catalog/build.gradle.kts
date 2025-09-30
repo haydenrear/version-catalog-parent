@@ -64,16 +64,29 @@ catalog {
         library("droolsMvel", "org.drools:drools-mvel:8.44.0.Final")
         bundle("drools", mutableListOf("droolsEngine", "droolsMvel"))
 
-        library("opentelemtrySemConv", "io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-semconv:1.33.6-alpha")
+        library("opentelemtrySemConv", "io.opentelemetry.semconv", "opentelemetry-semconv").withoutVersion()
         library("opentelemtryLogback", "io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0:2.8.0-alpha")
         library("opentelemtryInstrumentationApi", "io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.8.0")
         library("opentelemtrySpringBootStarter", "io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.8.0")
         library("opentelemtryAnnotations", "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:2.8.0")
         library("opentelemtryJdbc", "io.opentelemetry.instrumentation:opentelemetry-jdbc:2.8.0-alpha")
 
+        library("opentelemetryApi", "io.opentelemetry", "opentelemetry-api").withoutVersion()
+        library("opentelemetrySdk", "io.opentelemetry", "opentelemetry-sdk").withoutVersion()
+        library("opentelemetryExporterLogging", "io.opentelemetry", "opentelemetry-exporter-logging").withoutVersion()
+
         bundle("opentelemetry", mutableListOf(
             "opentelemtrySemConv", "opentelemtryLogback", "opentelemtryInstrumentationApi",
-            "opentelemtrySpringBootStarter", "opentelemtryAnnotations", "opentelemtryJdbc"
+            "opentelemtrySpringBootStarter", "opentelemtryAnnotations", "opentelemtryJdbc",
+            "opentelemetryApi", "opentelemetrySdk", "opentelemetryExporterLogging"
+        ))
+
+        library("micrometerCore", "io.micrometer", "micrometer-core").withoutVersion()
+        library("micrometerRegistryOtlp", "io.micrometer", "micrometer-registry-otlp").withoutVersion()
+        library("micrometerTracingBridgeOtel", "io.micrometer:micrometer-tracing-bridge-otel:1.3.13")
+
+        bundle("micrometer", mutableListOf(
+            "micrometerCore", "micrometerRegistryOtlp", "micrometerTracingBridgeOtel"
         ))
 
 
@@ -88,8 +101,9 @@ catalog {
 
         bundle("externalBoms", mutableListOf(
             "springCloudBom", "springBootDependenciesBom",
-            "springIntegrationBom", "openTelemetryBom",
-            "springShellBom", "springAiBom", "springModulithBom"
+            "springIntegrationBom",
+            "springShellBom", "springAiBom", "springModulithBom",
+            "openTelemetryBom"
         ))
 
     }

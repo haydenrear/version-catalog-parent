@@ -51,10 +51,28 @@ open class Libraries {
         val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0"
         
 
+        val micrometerCore = "io.micrometer:micrometer-core:"
+        
+
+        val micrometerRegistryOtlp = "io.micrometer:micrometer-registry-otlp:"
+        
+
+        val micrometerTracingBridgeOtel = "io.micrometer:micrometer-tracing-bridge-otel:1.3.13"
+        
+
         val netflixDgsLib = "com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-gradle:6.4.0-SNAPSHOT"
         
 
         val openTelemetryBom = "io.opentelemetry:opentelemetry-bom:1.42.1"
+        
+
+        val opentelemetryApi = "io.opentelemetry:opentelemetry-api:"
+        
+
+        val opentelemetryExporterLogging = "io.opentelemetry:opentelemetry-exporter-logging:"
+        
+
+        val opentelemetrySdk = "io.opentelemetry:opentelemetry-sdk:"
         
 
         val opentelemtryAnnotations = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:2.8.0"
@@ -69,7 +87,7 @@ open class Libraries {
         val opentelemtryLogback = "io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0:2.8.0-alpha"
         
 
-        val opentelemtrySemConv = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-semconv:1.33.6-alpha"
+        val opentelemtrySemConv = "io.opentelemetry.semconv:opentelemetry-semconv:"
         
 
         val opentelemtrySpringBootStarter = "io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.8.0"
@@ -184,23 +202,37 @@ val droolsBundle = DroolsBundle()
             
                 val springIntegrationBom = "org.springframework.integration:spring-integration-bom:6.2.1"
             
-                val openTelemetryBom = "io.opentelemetry:opentelemetry-bom:1.42.1"
-            
                 val springShellBom = "org.springframework.shell:spring-shell-dependencies:3.4.0"
             
                 val springAiBom = "org.springframework.ai:spring-ai-bom:1.0.0"
             
                 val springModulithBom = "org.springframework.modulith:spring-modulith-bom:1.4.3"
             
+                val openTelemetryBom = "io.opentelemetry:opentelemetry-bom:1.42.1"
+            
         open fun inBundle(): List<String> {
             return mutableListOf(
-        springCloudBom, springBootDependenciesBom, springIntegrationBom, openTelemetryBom, springShellBom, springAiBom, springModulithBom)}}
+        springCloudBom, springBootDependenciesBom, springIntegrationBom, springShellBom, springAiBom, springModulithBom, openTelemetryBom)}}
 val externalBomsBundle = ExternalbomsBundle()
 
         
 
+        open class MicrometerBundle {
+                val micrometerCore = "io.micrometer:micrometer-core:"
+            
+                val micrometerRegistryOtlp = "io.micrometer:micrometer-registry-otlp:"
+            
+                val micrometerTracingBridgeOtel = "io.micrometer:micrometer-tracing-bridge-otel:1.3.13"
+            
+        open fun inBundle(): List<String> {
+            return mutableListOf(
+        micrometerCore, micrometerRegistryOtlp, micrometerTracingBridgeOtel)}}
+val micrometerBundle = MicrometerBundle()
+
+        
+
         open class OpentelemetryBundle {
-                val opentelemtrySemConv = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-semconv:1.33.6-alpha"
+                val opentelemtrySemConv = "io.opentelemetry.semconv:opentelemetry-semconv:"
             
                 val opentelemtryLogback = "io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0:2.8.0-alpha"
             
@@ -212,9 +244,15 @@ val externalBomsBundle = ExternalbomsBundle()
             
                 val opentelemtryJdbc = "io.opentelemetry.instrumentation:opentelemetry-jdbc:2.8.0-alpha"
             
+                val opentelemetryApi = "io.opentelemetry:opentelemetry-api:"
+            
+                val opentelemetrySdk = "io.opentelemetry:opentelemetry-sdk:"
+            
+                val opentelemetryExporterLogging = "io.opentelemetry:opentelemetry-exporter-logging:"
+            
         open fun inBundle(): List<String> {
             return mutableListOf(
-        opentelemtrySemConv, opentelemtryLogback, opentelemtryInstrumentationApi, opentelemtrySpringBootStarter, opentelemtryAnnotations, opentelemtryJdbc)}}
+        opentelemtrySemConv, opentelemtryLogback, opentelemtryInstrumentationApi, opentelemtrySpringBootStarter, opentelemtryAnnotations, opentelemtryJdbc, opentelemetryApi, opentelemetrySdk, opentelemetryExporterLogging)}}
 val opentelemetryBundle = OpentelemetryBundle()
 
         
