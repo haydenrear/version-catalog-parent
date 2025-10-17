@@ -1,5 +1,14 @@
 #!/bin/sh
 
+if [[ ! -e dgs-codegen-version-update ]]; then
+  git clone git@github.com:haydenrear/dgs-codegen-version-update.git
+fi
+
+cd dgs-codegen-version-update
+./gradlew build -x test
+./gradlew publishToMavenLocal
+cd ..
+
 echo "$HOME"
 ./gradlew version_catalog:build
 ./gradlew version_catalog:generateCatalogAsToml
